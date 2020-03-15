@@ -1,0 +1,16 @@
+* F:\VLSI_PROJECT\Static Power\staticpowerproposed@0.asc
+M§NM2 N004 N002 0 0 NMOS l=100n w=45n
+M§NM1 N003 N002 N004 N004 NMOS l=100n w=45n
+M§PM1 N001 N002 N003 N001 PMOS l=100n w=75n
+M§PM2 N003 N003 N004 N003 PMOS l=100n w=75n
+V1 N002 0 0
+V2 N001 0 1.8
+C1 N003 0 1FF
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\MAHADEVAN\Documents\LTspiceXVII\lib\cmp\standard.mos
+.dc v1 0 1.8 0.01
+.inc 90nm_bulk.pm.txt
+.meas DC res1 FIND 1.8*(I(V2)) AT 0
+.backanno
+.end
